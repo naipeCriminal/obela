@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="assets/css/bootstrapdisplay.css">
+	<link rel="stylesheet" href="assets/css/obelaFont.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+ <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="assets/img/obela-logo.png" alt="" height="30"></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">productos</a></li>
+            <li><a href="#about">recetas</a></li>
+            <li><a href="#contact">nosotros</a></li>
+            <li><a href="#contact">compras</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container wmax">
+    	<div class="row historia ">
+			<div class="col-md-12 sinEspacio">
+				<img src="assets/img/nuestra-historia.jpg" class="img-responsive" alt="">
+			</div>
+			<div class="col-md-12 sinEspacio">
+				<p>obela ©  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa error vel tempore, quam sequi, ad facilis cumque similique excepturi optio est, natus aut porro incidunt. Maiores sapiente distinctio, iusto soluta!</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia tempore architecto ipsum iure quasi aliquam ea, qui possimus nisi ab porro, amet mollitia placeat, dolorem distinctio quas provident necessitatibus fugiat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quis libero cumque iure praesentium perspiciatis quae non quaerat veritatis necessitatibus. Quasi fugit, at facilis doloribus accusantium aliquam ipsa sapiente laborum!</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, inventore. Omnis voluptate vitae consequatur, nam, at est! Dolorum facere, exercitationem inventore, ex ea laboriosam repellat ratione, nemo eveniet ab officia?
+				</p>
+				<ul>
+					<li><a href="#">www.strauss-group.com/</a></li>
+					<li><a href="#">www.pepsico.com.mx/</a></li>					
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="container text-center">
+	    <ul>
+			<li><a href="#">legales</a></li>
+			<li><a href="#about">aviso de privacidad</a></li>
+			<li><a href="#contact">contacto</a></li>
+		</ul>
+		<p class="text-center" style="margin:5px;color:#fff;">*pepsico-strauss fresh dips & spreads international, gmbh, méxico, 2014 </p>
+		</div>
+	</footer>
+
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery-migrate-1.2.1.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/app.js"></script>
+<script type="text/javascript">
+function initialize() {
+
+
+	// Creamos el Mapa
+	var map = new google.maps.Map(
+        document.getElementById('map-canvas'), {
+          center: new google.maps.LatLng(19.08853433,-98.32209365),
+          zoom: 11,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+
+	// Definimos la imagen del Marker
+	var image = 'assets/img/pinobela.png';
+
+	// Agregamos el pin
+	var marker1 = new google.maps.Marker({
+		position: new google.maps.LatLng(19.0471353,-98.208313),
+		map: map,
+		icon: image,
+		title: 'Paseo Bravo.',
+		clickable: true
+	});
+	// Creamos el popup con la informacion de la sucursal
+	marker1.info = new google.maps.InfoWindow({
+	  content: '<b>Paseo Bravo.:</b>'
+	});
+	// Creamos la interaccion con el boton
+	google.maps.event.addListener(marker1, 'click', function() {
+		marker1.info.open(map, marker1);
+	});
+	// Agregamos el pin
+	var marker2 = new google.maps.Marker({
+		position: new google.maps.LatLng(19.044383,-98.1947624),
+		map: map,
+		icon: image,
+		title: '4 Oriente.',
+		clickable: true
+	});
+	// Creamos el popup con la informacion de la sucursal
+	marker2.info = new google.maps.InfoWindow({
+	  content: '<b>4 Oriente.:</b>'
+	});
+	// Creamos la interaccion con el boton
+	google.maps.event.addListener(marker2, 'click', function() {
+		marker2.info.open(map, marker2);
+	});
+	// Agregamos el pin
+	var marker3 = new google.maps.Marker({
+		position: new google.maps.LatLng(19.0474737,-98.2162648),
+		map: map,
+		icon: image,
+		title: 'Upaep.',
+		clickable: true
+	});
+	// Creamos el popup con la informacion de la sucursal
+	marker3.info = new google.maps.InfoWindow({
+	  content: '<b>Upaep.:</b>'
+	});
+	// Creamos la interaccion con el boton
+	google.maps.event.addListener(marker3, 'click', function() {
+		marker3.info.open(map, marker3);
+	});
+	// Agregamos el pin
+	var marker4 = new google.maps.Marker({
+		position: new google.maps.LatLng(19.0536175,-98.2224277),
+		map: map,
+		icon: image,
+		title: 'Los Frailes.',
+		clickable: true
+	});
+	// Creamos el popup con la informacion de la sucursal
+	marker4.info = new google.maps.InfoWindow({
+	  content: '<b>Los Frailes.:</b>'
+	});
+	// Creamos la interaccion con el boton
+	google.maps.event.addListener(marker4, 'click', function() {
+		marker4.info.open(map, marker4);
+	});
+	// Agregamos el pin
+	var marker5 = new google.maps.Marker({
+		position: new google.maps.LatLng(19.0413822,-98.1965368),
+		map: map,
+		icon: image,
+		title: 'Los Sapos.',
+		clickable: true
+	});
+	// Creamos el popup con la informacion de la sucursal
+	marker5.info = new google.maps.InfoWindow({
+	  content: '<b>Los Sapos.:</b>'
+	});
+	// Creamos la interaccion con el boton
+	google.maps.event.addListener(marker5, 'click', function() {
+		marker5.info.open(map, marker5);
+	});
+	// Agregamos el pin
+	var marker6 = new google.maps.Marker({
+		position: new google.maps.LatLng(19.0333257,-98.1867878),
+		map: map,
+		icon: image,
+		title: 'Finanzas.',
+		clickable: true
+	});
+	// Creamos el popup con la informacion de la sucursal
+	marker6.info = new google.maps.InfoWindow({
+	  content: '<b>Finanzas.:</b>'
+	});
+	// Creamos la interaccion con el boton
+	google.maps.event.addListener(marker6, 'click', function() {
+		marker6.info.open(map, marker6);
+	});
+	// Agregamos el pin
+	var marker7 = new google.maps.Marker({
+		position: new google.maps.LatLng(19.054289,-98.283863),
+		map: map,
+		icon: image,
+		title: 'Udla.',
+		clickable: true
+	});
+	// Creamos el popup con la informacion de la sucursal
+	marker7.info = new google.maps.InfoWindow({
+	  content: '<b>Udla.:</b>'
+	});
+	// Creamos la interaccion con el boton
+	google.maps.event.addListener(marker7, 'click', function() {
+		marker7.info.open(map, marker7);
+	});
+	// Agregamos el pin
+	var marker8 = new google.maps.Marker({
+		position: new google.maps.LatLng(19.05384,-98.28302),
+		map: map,
+		icon: image,
+		title: '�gora.',
+		clickable: true
+	});
+	// Creamos el popup con la informacion de la sucursal
+	marker8.info = new google.maps.InfoWindow({
+	  content: '<b>�gora.:</b>'
+	});
+	// Creamos la interaccion con el boton
+	google.maps.event.addListener(marker8, 'click', function() {
+		marker8.info.open(map, marker8);
+	});
+	// Agregamos el pin
+	var marker9 = new google.maps.Marker({
+		position: new google.maps.LatLng(19.04743,-98.21632),
+		map: map,
+		icon: image,
+		title: 'Upaep 2.',
+		clickable: true
+	});
+	// Creamos el popup con la informacion de la sucursal
+	marker9.info = new google.maps.InfoWindow({
+	  content: '<b>Upaep 2.:</b>'
+	});
+	// Creamos la interaccion con el boton
+	google.maps.event.addListener(marker9, 'click', function() {
+		marker9.info.open(map, marker9);
+	});
+	// Agregamos el pin
+	var marker10 = new google.maps.Marker({
+		position: new google.maps.LatLng(19.4624669,-99.212641),
+		map: map,
+		icon: image,
+		title: 'Papagayo.',
+		clickable: true
+	});
+	// Creamos el popup con la informacion de la sucursal
+	marker10.info = new google.maps.InfoWindow({
+	  content: '<b>Papagayo.:</b>'
+	});
+	// Creamos la interaccion con el boton
+	google.maps.event.addListener(marker10, 'click', function() {
+		marker10.info.open(map, marker10);
+	});
+}
+
+
+function loadScript() {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
+      'callback=initialize';
+  document.body.appendChild(script);
+}
+
+window.onload = loadScript;
+</script>
+
+	<script>
+		App.init();
+	</script>
+</body>
+</html>

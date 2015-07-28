@@ -1,0 +1,1 @@
+Hola amigo programador, este archivo es un archivo dummy, el modelo de datos se maneja con el Framework de WORDPRESS. :-)
