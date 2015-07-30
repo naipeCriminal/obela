@@ -3,11 +3,33 @@
 html {
   position: relative;
   min-height: 100%;
+  color: #fff;
 }
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  color: #fff;
 }
+.relative{ position: relative; }
+.absolute{ position: absolute; }
+.mobile{ display: none; }
+.yellow{ color: #dfe130; }
+.white{ color: #ffffff; }
+.container.wmax{
+  padding-top: 50px;
+}
+.full-bg{
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.full-height{ height: 100%; }
 .footer {
   position: absolute;
   bottom: 0;
@@ -16,15 +38,29 @@ body {
   height: 60px;
     background-color: #A3052D;
 }
-
+.margin-reset{ margin: 0; }
+.padding-reset{ padding: 0; }
+.full{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.table{
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.cell-center{
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
+}
 
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
-
-body > .container {
-  padding: 60px 15px 0;
-}
 .container .text-muted {
   margin: 20px 0;
 }
@@ -85,52 +121,53 @@ footer{
 	padding: 0px;
 	margin: 0px;	
 }
-.col-md-3.home, .masreceta{
-	padding: 0px;
-	margin: 0px;
-  overflow: hidden;
-  /*min-width: 250px;*/
+/*recetas*/
+#preparacion-receta{ background-color: #a3052d; }
+#receta-preparacion{
+  padding-left: 15px;
 }
-.homehover h1{
-  color: #fff;
-  transform: rotate(348deg) scale(1) skew(1deg) translate(0px);
-  -webkit-transform: rotate(348deg) scale(1) skew(1deg) translate(0px);
-  -moz-transform: rotate(348deg) scale(1) skew(1deg) translate(0px);
-  -o-transform: rotate(348deg) scale(1) skew(1deg) translate(0px);
-  -ms-transform: rotate(348deg) scale(1) skew(1deg) translate(0px);
+.receta-grid p {
+  font-family: "obela_handbold";
+  color: #ffffff;
+  font-size: 47px;
+  font-weight: normal;
+  width: 80%;
+  margin: 0 auto;
+  line-height: 38px;
 }
-.homehover p a{
-  color:#f5f5f5;
-  border:2px solid #fff;
-  width: 35px;
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 900;
+.receta-wrapper{
+  width: 90%;
+  margin: 0 auto;
 }
-.homehover{
-
-  position: absolute;
-  /*padding: 15px;*/
-  padding-top: 1px;
-  bottom: 0;
-  overflow: hidden;
+#receta-ingredientes li{
+  list-style: none;
+}
+#receta-preparacion li{
+  list-style-type: disc;
+}
+.underline-recipe{
+  width: 80%;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 10px auto;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+.receta-grid:hover .receta-grid-over{
+  display: block;
+}
+.receta-grid-over{
+  background-color: #dc022a;
+  display: none;
+}
+.obela-smile{
   width: 100%;
-  height: 0%;
-
-  /*
-  position: absolute;
-  top: 100%;
-  padding: 15px;
-  padding-top: 1px;
-  left: 50%;
-  margin-left: -55px;*/
-}
-.pantalla{
-  width: 100%;
-  background: rgba(139, 1, 36, 0.6);
+  margin-top: 20px;
 }
 /*receta-interior*/
+#receta-titulo{
+  text-indent: 25px;
+}
 .recetaindividual h2{
   font-family: "obela_handbold";
   color:#dfe130;
@@ -156,6 +193,57 @@ footer{
 }
 .recetaindividual .preparacion{
   background:#a3052d;
+}
+.divisor{
+  float: left;
+  height: 230px;
+  width: 100%;
+  background-position: center center;  
+  background-repeat: no-repeat;
+}
+.invert-char{
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  display: inline-block;
+  margin-right: 3px;
+}
+#recetas-divisor{
+  background-color: #2d6d00;
+  background-image: url(../img/recetas-middle-divisor.png);
+}
+#receta-divisor{
+  background-color: #ffa000;
+  background-image: url(../img/receta-divisor.png);
+}
+#recetas-divisor-bottom{
+  background-color: #dc022a;
+  background-image: url(../img/recetas-bottom-divisor.png);
+}
+#recetas-divisor-bottom .copies{
+  margin-top: 30px;
+}
+#recetas-divisor-bottom .copies > .obelaizer{
+  line-height: 35px;
+}
+#receta-divisor p.obelaizer{
+  font-size: 46px;
+  line-height: 33px;
+}
+#receta-divisor h1.obelaizer { font-size: 60px; }
+.obelaizer{
+  -ms-transform: rotate(-6deg);
+  -webkit-transform: rotate(-6deg);
+  transform: rotate(-6deg);
+  color: #ffffff;
+  font-family: "obela_handbold";
+  font-size: 52px;
+  line-height: 41px;
+}
+h1.obelaizer{ font-size: 65px; }
+.obelaizer-letter{
+  position: relative;
+  top: 5px;
 }
 footer ul li{
   list-style-type: none;
@@ -232,8 +320,8 @@ footer .container{
   text-transform: uppercase;
 }
 .recetas .pantalla{
-  /*background: rgba(111, 111, 0, 0.6);*/
   background: rgba(111, 111, 0,1);
+  height: 100%;
 }
 .recetas .homehover li{
   list-style: none;
@@ -303,4 +391,82 @@ a:hover {
   position: relative;
   /*left: 50%;*/
   /*margin-left: -50%;*/
+}
+
+/*icons*/
+.icon-network{
+  width: 30px;
+  height: 30px;
+  background-color: #800b28;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+  margin-left: 5px;
+  padding: 5px;
+  position: relative;
+  top: 6px;
+}
+.icon-container h3{
+  line-height: 14px;
+  margin: 5px 0;
+  font-family: 'obela_handregular';
+}
+.icon-container h3 span{
+  margin: 0;
+  font-family: 'obela_handbold';
+}
+.icon{
+  background-image: url(../img/icons.png);
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.fb-icon {
+  width: 9px;
+  height: 18px;
+  background-position: -2px -2px;
+  margin-left: 5px;
+  margin-top: 1px;
+}
+
+.ig-icon {
+  width: 15px;
+  height: 16px;
+  background-position: -15px -2px;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+.portions-icon {
+  width: 17px;
+  height: 35px;
+  background-position: -34px -2px;
+}
+
+.prep-icon {
+  width: 28px;
+  height: 34px;
+  background-position: -55px -2px;
+}
+
+.tiempo-icon {
+  width: 29px;
+  height: 32px;
+  background-position: -55px -40px;
+}
+
+.tw-icon {
+  width: 19px;
+  height: 15px;
+  background-position: -2px -40px;
+  margin-top: 2px;
+}
+.flecha-descripcion{
+  position: absolute;
+  right: 30%;
+  top: -30px;
+  background-image: url(../img/flecha-abajo.png);
+  width: 56px;
+  height: 80px;
 }

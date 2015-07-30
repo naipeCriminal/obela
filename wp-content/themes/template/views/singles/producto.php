@@ -58,7 +58,7 @@
 				?>
     			<img class="img-responsive" style="padding-right: 15px;" src="<?php bloginfo('url'); ?>/wp-content/themes/template/assets/img/<?php echo $img; ?>.jpg" alt="">
     		</div>
-			<div class="row recetaindividual" style="  padding: 15px; margin: 0px;padding-left: 0px;">
+			<div class="row recetaindividual">
 			<?php
 
 			   $args = array('post_type' => 'receta','posts_per_page' => '8','orderby' => 'rand',);
@@ -88,7 +88,7 @@
 			   endif;
 			?>
     		</div>
-<!-- 			<div class="row recetaindividual" style="  padding: 15px; margin: 0px;">
+<!-- 			<div class="row recetaindividual">
 	    		<div class="col-xs-6 col-md-3 masreceta">
 					<div class="pantalla" style="position:absolute;"></div>
 				    <img src="assets/img/receta-relacionada-1.jpg" alt="" class="img-responsive">		

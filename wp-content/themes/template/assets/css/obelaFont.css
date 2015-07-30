@@ -33,3 +33,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
+.obela-bold{ font-family: 'obela_handbold'; }
+.obela-medium{ font-family: 'obela_handmedium'; }
+.obela-regular{ font-family: 'obela_handregular'; }

@@ -1,51 +1,95 @@
 <div class="container wmax">
-	<div class="row recetas ">
-		<div class="row recetaindividual" style="  padding: 15px; margin: 0px;padding-left: 0px;">
-			<?php
-			$args = array('post_type' => 'receta','posts_per_page' => '8','orderby' => 'rand',);
-			$category_posts = new WP_Query($args);
-			if($category_posts->have_posts()) :
-			while($category_posts->have_posts()) :
-			$category_posts->the_post();
-			global $post;
-			$thumbID = get_post_thumbnail_id( $post->ID );
-			$imgDestacada = wp_get_attachment_url( $thumbID );
-			?>
-			<div class="col-xs-6 col-md-3 col-lg-3 masreceta">
-				<div class="pantalla" style="position:absolute;"></div>
-				<img src="<?php echo $imgDestacada; ?>" alt="" class="img-responsive" width="">
-				<div class="homehover col-xs-12 sinEspacio" style="width:100%">
-					<img class="imgreceta img-responsive" src="<?php bloginfo('url'); ?>../wp-content/themes/template/assets/img/recetas-barra.png" style="padding-left: 5px;" alt="">
-					<h3 class=""><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
-					<div  style="padding-left:5px;" class="col-xs-4 sinEspacio">
-						<img src="<?php bloginfo('url'); ?>../wp-content/themes/template/assets/img/receta-tiempo.png">
-						<ul>
-							<li>tiempo</li>
-							<li><span style="font-weight:bolder;"><?php echo( types_render_field("tiempo")); ?></span></li>
-						</ul>
+	<div class="row recetas">
+		<?php
+		$args = array('post_type' => 'receta','posts_per_page' => '8','orderby' => 'rand',);
+		$category_posts = new WP_Query($args);
+		if($category_posts->have_posts()) :
+		while($category_posts->have_posts()) :
+		$category_posts->the_post();
+		global $post;
+		$thumbID = get_post_thumbnail_id( $post->ID );
+		$imgDestacada = wp_get_attachment_url( $thumbID );
+		?>
+		<div class="col-xs-6 col-md-3 col-lg-3 padding-reset receta-grid">
+			<a href="<?php echo get_permalink(); ?>">
+				<img src="<?php echo $imgDestacada; ?>" alt="" class="img-responsive">
+				<div class="receta-grid-over full">
+					<div class="table">
+						<div class="cell-center text-center">
+							<p>
+								<?php the_title(); ?>
+								<div class="underline-recipe"></div>
+							</p>
+							<div class="obela-smile">
+								<img src="<?php bloginfo('url'); ?>/wp-content/themes/template/assets/img/receta-smile.png">
+							</div>
+						</div>
 					</div>
-					<div  style="padding-left:5px;" class="col-xs-4 sinEspacio">
-						<img src="<?php bloginfo('url'); ?>../wp-content/themes/template/assets/img/receta-porciones.png">
-						<ul>
-							<li>porciones</li>
-							<li><span style="font-weight:bolder;"><?php echo( types_render_field("prep")); ?></span></li>
-						</ul>
-					</div>
-					<img class="imgreceta img-responsive" src="<?php bloginfo('url'); ?>../wp-content/themes/template/assets/img/recetas-barra.png"  style="padding-left: 5px;" alt="">
+				</div>
+			</a>
+		</div>
+		<?php
+		endwhile;
+			else:
+		?>
+		Oops, there are no posts.
+		<?php
+		endif;
+		?>
+		<div class="col-md-12 divisor" id="recetas-divisor">
+			<div class="table">
+				<div class="cell-center text-center">
+					<p class="obelaizer">¿Con qué se</p>
+					<p class="obelaizer">te antojaría probar</p>
+					<p class="obelaizer">hummus Obela®?</p>
 				</div>
 			</div>
-			
-			<?php
-			endwhile;
-				else:
-			?>
-			Oops, there are no posts.
-			<?php
-			endif;
-			?>
 		</div>
-		<div class="col-md-12 sinEspacio">
-			<img src="assets/img/pleca-hummus.jpg" class="img-responsive" alt="">
+		<!-- otros posts -->
+		<?php
+		$args = array('post_type' => 'receta','posts_per_page' => '8','orderby' => 'rand',);
+		$category_posts = new WP_Query($args);
+		if($category_posts->have_posts()) :
+		while($category_posts->have_posts()) :
+		$category_posts->the_post();
+		global $post;
+		$thumbID = get_post_thumbnail_id( $post->ID );
+		$imgDestacada = wp_get_attachment_url( $thumbID );
+		?>
+		<div class="col-xs-6 col-md-3 col-lg-3 padding-reset receta-grid">
+			<a href="<?php echo get_permalink(); ?>">
+				<img src="<?php echo $imgDestacada; ?>" alt="" class="img-responsive">
+				<div class="receta-grid-over full">
+					<div class="table">
+						<div class="cell-center text-center">
+							<p>
+								<?php the_title(); ?>
+								<div class="underline-recipe"></div>
+							</p>
+							<div class="obela-smile">
+								<img src="<?php bloginfo('url'); ?>/wp-content/themes/template/assets/img/receta-smile.png">
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+		<?php
+		endwhile;
+			else:
+		?>
+		Oops, there are no posts.
+		<?php
+		endif;
+		?>
+		<div class="col-md-12 divisor" id="recetas-divisor-bottom">
+			<div class="row">
+				<div class="col-md-offset-1 col-md-5 text-center copies col-xs-7">
+					<p class="obelaizer">¡Yo ya probé!</p>
+					<p class="obelaizer">¿Y tú?</p>
+					<h1 class="obelaizer">¡Ya pruébalo!</h1>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
