@@ -15,6 +15,7 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-migrate-1.2.1.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easing.1.3.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.transit.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/app.js"></script>
 	<script>
 		App.init();

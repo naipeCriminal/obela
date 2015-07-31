@@ -1,49 +1,21 @@
-    <div class="container wmax">
-    	<div class="row ubicacion">
-			<div class="col-xs-12 col-md-12 header-ubicacion">
-				<div class="header-img hidden-xs">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/header-img.png" alt="">
-				</div>
-				<div class="col-xs-6 col-md-6"><h1>encuentra de obela</h1></div>
-				<div class="col-xs-6 col-md-6">
-					<img style="display:inline;" class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/ubicacion-ubicacion.png" alt="">
-					<img style="display:inline;" class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/ubicacion-bullets.png" alt="">
-				</div>
-			</div>
-		</div>
-		<div  class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 maxwidht sinEspacio">
-				<div class="col-xs-12 col-sm-12 col-md-12 textomapa">
-					<div class="col-xs-10 col-sm-10 col-md-10">
-						<p style="color:#fff;  font-size: 16px;">encuentra un punto de venta cerca de ti.</p>
-					</div>
-					<div class="col-xs-2 col-sm-2 col-md-2">
-						<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/apuntadormapa.png" alt="">
-					</div>
-				</div>
-
-			</div>
-		</div>
-		<div class="row">
-			<div id="map-canvas" class="sinEspacio col-xs-12 col-md-12 ">
-					
-			</div>
+<div class="container wmax">
+	<div class="row">
+		<div id="map-canvas" class="sinEspacio col-xs-12 col-md-9">
+			<!-- map -->
 		</div>
 	</div>
-
+</div>
 <script>
 function initialize() {
 	// Creamos el Mapa
 	var map = new google.maps.Map(
-        document.getElementById('map-canvas'), {
-          center: new google.maps.LatLng(19.08853433,-98.32209365),
-          zoom: 11,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-      });
-
+document.getElementById('map-canvas'), {
+center: new google.maps.LatLng(19.08853433,-98.32209365),
+zoom: 11,
+mapTypeId: google.maps.MapTypeId.ROADMAP
+});
 	// Definimos la imagen del Marker
 	var image = '../wp-content/themes/template/assets/img/red.png';
-
 	// Agregamos el pin
 	var marker1 = new google.maps.Marker({
 		position: new google.maps.LatLng(19.0471353,-98.208313),
@@ -54,7 +26,7 @@ function initialize() {
 	});
 	// Creamos el popup con la informacion de la sucursal
 	marker1.info = new google.maps.InfoWindow({
-	  content: '<b>Paseo Bravo.:</b>'
+	content: '<b>Paseo Bravo.:</b>'
 	});
 	// Creamos la interaccion con el boton
 	google.maps.event.addListener(marker1, 'click', function() {
@@ -70,7 +42,7 @@ function initialize() {
 	});
 	// Creamos el popup con la informacion de la sucursal
 	marker2.info = new google.maps.InfoWindow({
-	  content: '<b>4 Oriente.:</b>'
+	content: '<b>4 Oriente.:</b>'
 	});
 	// Creamos la interaccion con el boton
 	google.maps.event.addListener(marker2, 'click', function() {
@@ -86,7 +58,7 @@ function initialize() {
 	});
 	// Creamos el popup con la informacion de la sucursal
 	marker3.info = new google.maps.InfoWindow({
-	  content: '<b>Upaep.:</b>'
+	content: '<b>Upaep.:</b>'
 	});
 	// Creamos la interaccion con el boton
 	google.maps.event.addListener(marker3, 'click', function() {
@@ -102,7 +74,7 @@ function initialize() {
 	});
 	// Creamos el popup con la informacion de la sucursal
 	marker4.info = new google.maps.InfoWindow({
-	  content: '<b>Los Frailes.:</b>'
+	content: '<b>Los Frailes.:</b>'
 	});
 	// Creamos la interaccion con el boton
 	google.maps.event.addListener(marker4, 'click', function() {
@@ -118,7 +90,7 @@ function initialize() {
 	});
 	// Creamos el popup con la informacion de la sucursal
 	marker5.info = new google.maps.InfoWindow({
-	  content: '<b>Los Sapos.:</b>'
+	content: '<b>Los Sapos.:</b>'
 	});
 	// Creamos la interaccion con el boton
 	google.maps.event.addListener(marker5, 'click', function() {
@@ -134,7 +106,7 @@ function initialize() {
 	});
 	// Creamos el popup con la informacion de la sucursal
 	marker6.info = new google.maps.InfoWindow({
-	  content: '<b>Finanzas.:</b>'
+	content: '<b>Finanzas.:</b>'
 	});
 	// Creamos la interaccion con el boton
 	google.maps.event.addListener(marker6, 'click', function() {
@@ -150,7 +122,7 @@ function initialize() {
 	});
 	// Creamos el popup con la informacion de la sucursal
 	marker7.info = new google.maps.InfoWindow({
-	  content: '<b>Udla.:</b>'
+	content: '<b>Udla.:</b>'
 	});
 	// Creamos la interaccion con el boton
 	google.maps.event.addListener(marker7, 'click', function() {
@@ -166,7 +138,7 @@ function initialize() {
 	});
 	// Creamos el popup con la informacion de la sucursal
 	marker8.info = new google.maps.InfoWindow({
-	  content: '<b>�gora.:</b>'
+	content: '<b>�gora.:</b>'
 	});
 	// Creamos la interaccion con el boton
 	google.maps.event.addListener(marker8, 'click', function() {
@@ -182,7 +154,7 @@ function initialize() {
 	});
 	// Creamos el popup con la informacion de la sucursal
 	marker9.info = new google.maps.InfoWindow({
-	  content: '<b>Upaep 2.:</b>'
+	content: '<b>Upaep 2.:</b>'
 	});
 	// Creamos la interaccion con el boton
 	google.maps.event.addListener(marker9, 'click', function() {
@@ -198,23 +170,19 @@ function initialize() {
 	});
 	// Creamos el popup con la informacion de la sucursal
 	marker10.info = new google.maps.InfoWindow({
-	  content: '<b>Papagayo.:</b>'
+	content: '<b>Papagayo.:</b>'
 	});
 	// Creamos la interaccion con el boton
 	google.maps.event.addListener(marker10, 'click', function() {
 		marker10.info.open(map, marker10);
 	});
 }
-
-
 function loadScript() {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
-      'callback=initialize';
-  document.body.appendChild(script);
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
+'callback=initialize';
+document.body.appendChild(script);
 }
-
-window.onload = loadScript;	
-
+	window.onload = loadScript;
 </script>

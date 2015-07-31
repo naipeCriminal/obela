@@ -31,7 +31,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php bloginfo('url'); ?>"> <img src="<?php echo get_template_directory_uri(); ?>/assets/img/obela-logo.png" alt="" height="30"></a>
+          <a class="navbar-brand" href="<?php bloginfo('url'); ?>"> <img src="<?php echo get_template_directory_uri(); ?>/assets/img/obela-logo.png" alt="" height="30" style="margin-left:30px; margin-top:-5px;"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">

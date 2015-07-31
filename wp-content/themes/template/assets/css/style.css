@@ -12,11 +12,19 @@ body {
   overflow-y: scroll;
   padding-top: 50px;
 }
+.navbar-nav > li{
+  margin: 0 25px;
+}
 #elastic-grid{ position: relative; }
 #canvas{
   position: absolute;
   left: 0;
-  top: 0;
+  top: -100px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  opacity: 0;
 }
 .relative{ position: relative; }
 .absolute{ position: absolute; }
@@ -154,6 +162,15 @@ footer{
   background-color: none;
   background-color: transparent;
   display: block;
+}
+.grid{
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  opacity: 0;
+  position: relative;
+  top: 100px;
 }
 .grid p {
   font-family: "obela_handbold";

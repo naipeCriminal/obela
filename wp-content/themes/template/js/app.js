@@ -133,8 +133,8 @@
                 dx = mouse.x - p.x;
                 dy = mouse.y - p.y;
                 distance = Math.sqrt(dx * dx + dy * dy);
-                if (p.movibleX) p.x = ((p.x - (dx / distance) * (range / distance) * speed) - ((p.x - p.x0)) / 3);
-                if (p.movibleY) p.y = ((p.y - (dy / distance) * (range / distance) * speed) - ((p.y - p.y0)) / 6);
+                if (p.movibleX) p.x = ((p.x - (dx / distance) * (range / distance) * speed) - ((p.x - p.x0)));
+                if (p.movibleY) p.y = ((p.y - (dy / distance) * (range / distance) * speed) - ((p.y - p.y0)) / 4);
             }
         }
         for (var j = 0; j < cuadros.length; j++) {
@@ -186,20 +186,27 @@ var App = (function() {
         wmx = $('.maxwidht').width();
         $('#map-canvas').width(wmx);
 
-        hubicacion = $('.row.ubicacion').height();
-        $('.header-ubicacion .header-img img').height(hubicacion);
+        var ubicacion = $('.row.ubicacion').height();
+        $('.header-ubicacion .header-img img').height(ubicacion);
     }
 
     function eventosPrincipal() {
         $(".obelaizer").obelaizer();
-        wimgreceta = $('.imgreceta').width();
-    }
-
-    function hovermasreceta() {
-        whovermasrecetahomehover = $('.masreceta .imgreceta').width();
-        $('.masreceta .imgreceta').css('marginLeft', -2 / (whovermasrecetahomehover))
-        console.log('fuck')
-
+        $(".grid").hover(function() {
+            $(this).transition({ scale: 0.95 });
+        }, function() {
+            $(this).transition({ scale: 1 });
+        });
+        $(".grid").each(function(index, el) {
+            $(this).delay(Math.random() * 900).animate({
+                opacity: 1,
+                top: 0
+            }, 900, 'easeOutQuart');
+        });
+        $("#canvas").animate({
+            opacity: 1,
+            top: 0
+        }, 900, 'easeOutQuart');
     }
 
     $(window).resize(function() {
