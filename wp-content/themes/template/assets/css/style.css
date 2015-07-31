@@ -6,7 +6,6 @@ html {
   color: #fff;
 }
 body {
-  /* Margin bottom by footer height */
   margin-bottom: 60px;
   color: #fff;
   overflow-y: scroll;
@@ -26,6 +25,46 @@ body {
   -khtml-opacity: 0;
   opacity: 0;
 }
+.modal, .modal a, .modal a:hover, .panel-title a:hover{
+  color: #434343;
+}
+.modal-header{
+  height: 140px;
+  color: #ffffff;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.modal-header .container{
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+/*modals*/
+#modal-pruebalo .modal-header{ background-color: #2d6d00; }
+#modal-pruebalo .modal-header .container{ background-image: url(../img/modals/modal-pruebalo.png); }
+#modal-diabetico .modal-header{ background-color: #2d6d00; }
+#modal-diabetico .modal-header .container{ background-image: url(../img/modals/modal-diabetico.png); }
+#modal-historia .modal-header{ background-color: #8b0124; }
+#modal-historia .modal-header .container{ background-image: url(../img/modals/modal-historia.png); }
+#modal-queesobela .modal-header{ background-color: #ff6800; }
+#modal-queesobela .modal-header .container{ background-image: url(../img/modals/modal-queesobela.png); }
+#modal-hummus .modal-header{ background-color: #2d6d00; }
+#modal-hummus .modal-header .container{ background-image: url(../img/modals/modal-hummus.png); }
+.modal-lg{
+  width: 100%;
+  height: 100%;
+}
+.modal-dialog {
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+.modal-lg .modal-content {
+  width: 100%;
+  min-height: 100%;
+  box-shadow: none;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
 .relative{ position: relative; }
 .absolute{ position: absolute; }
 .mobile{ display: none; }
@@ -33,7 +72,9 @@ body {
 .cherry, .obelaizer.cherry{ color: #a20425; }
 .white{ color: #ffffff; }
 .green, .obelaizer.green{ color: #c5d12c; }
-.container{ width: 100%; }
+.container{
+  margin: 0 auto;
+}
 .container.wmax{ padding: 0; }
 .full-bg{
   width: 100%;

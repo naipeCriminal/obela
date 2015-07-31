@@ -192,7 +192,7 @@ var App = (function() {
 
     function eventosPrincipal() {
         $(".obelaizer").obelaizer();
-        $(".grid").hover(function() {
+        $(".grid.overeable").hover(function() {
             $(this).transition({ scale: 0.95 });
         }, function() {
             $(this).transition({ scale: 1 });

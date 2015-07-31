@@ -10,7 +10,7 @@
 		$thumbID = get_post_thumbnail_id( $post->ID );
 		$imgDestacada = wp_get_attachment_url( $thumbID );
 		?>
-		<div class="col-xs-6 col-md-3 col-lg-3 padding-reset grid">
+		<div class="col-xs-6 col-md-3 col-lg-3 padding-reset grid overeable">
 			<a href="<?php echo get_permalink(); ?>">
 				<img src="<?php echo $imgDestacada; ?>" alt="" class="img-responsive">
 				<div class="grid-over full">
@@ -56,7 +56,7 @@
 		$thumbID = get_post_thumbnail_id( $post->ID );
 		$imgDestacada = wp_get_attachment_url( $thumbID );
 		?>
-		<div class="col-xs-6 col-md-3 col-lg-3 padding-reset grid">
+		<div class="col-xs-6 col-md-3 col-lg-3 padding-reset grid overeable">
 			<a href="<?php echo get_permalink(); ?>">
 				<img src="<?php echo $imgDestacada; ?>" alt="" class="img-responsive">
 				<div class="grid-over full">

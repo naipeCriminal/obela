@@ -1,8 +1,8 @@
 <div class="container wmax" id="nosotros">
 	<div id="elastic-grid" class="row">
 		<canvas id="canvas"></canvas>
-		<div class="col-md-3 grid">
-			<a href="#">
+		<div class="col-md-3 grid overeable">
+			<a href="#" data-toggle="modal" data-target="#modal-hummus">
 				<div class="grid-over full">
 					<div class="table">
 						<div class="cell-bottom text-center">
@@ -22,8 +22,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3 grid">
-			<a href="#">
+		<div class="col-md-3 grid overeable">
+			<a href="#" data-toggle="modal" data-target="#modal-queesobela">
 				<div class="grid-over full">
 					<div class="table">
 						<div class="cell-center text-center">
@@ -45,20 +45,18 @@
 			</div>
 		</div>
 		<div class="col-md-3 grid">
-			<a href="#">
-				<div class="grid-over full">
-					<div class="table">
-						<div class="cell-center text-center">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/nosotros/obela_vegetarianos.png" alt="">
-							<p class="obelaizer">Somos</p>
-							<p class="obelaizer">vegetarianos</p>
-						</div>
+			<div class="grid-over full">
+				<div class="table">
+					<div class="cell-center text-center">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/nosotros/obela_vegetarianos.png" alt="">
+						<p class="obelaizer">Somos</p>
+						<p class="obelaizer">vegetarianos</p>
 					</div>
 				</div>
-			</a>
+			</div>
 		</div>
-		<div class="col-md-3 grid">
-			<a href="#">
+		<div class="col-md-3 grid overeable">
+			<a href="#" data-toggle="modal" data-target="#modal-historia">
 				<div class="grid-over full">
 					<div class="table">
 						<div class="cell-center text-center">
@@ -69,8 +67,8 @@
 				</div>
 			</a>
 		</div>
-		<div class="col-md-3 grid">
-			<a href="#">
+		<div class="col-md-3 grid overeable">
+			<a href="#" data-target="#modal-diabetico" data-toggle="modal" >
 				<div class="table">
 					<div class="cell-center text-center">
 						<p class="obelaizer">¿Eres</p>
@@ -79,7 +77,7 @@
 				</div>
 			</a>
 		</div>
-		<div class="col-md-3 grid">
+		<div class="col-md-3 grid overeable">
 			<a href="#">
 				<div class="grid-over full">
 					<div class="table">
@@ -98,3 +96,4 @@
 var colors = ["#2d6d00", "#ffa000", "#ff6800", "#f1ece7", "#d7cd07", "#a2052c", "#dc022a", "#817c00"];
 var elasticGrid = true;
 </script>
+<?php require("modals.php") ?>

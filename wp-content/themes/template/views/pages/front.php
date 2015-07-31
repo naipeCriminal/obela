@@ -5,8 +5,8 @@
 	<!-- <div class="container wmax"> -->
 	<div id="elastic-grid" class="row">
 		<canvas id="canvas"></canvas>
-		<div class="col-md-3 grid">
-			<a href="#">
+		<div class="col-md-3 grid overeable">
+			<a href="/productos">
 				<div class="grid-over full">
 					<div class="table">
 						<div class="cell-center text-center">
@@ -27,8 +27,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3 grid">
-			<a href="#">
+		<div class="col-md-3 grid overeable">
+			<a href="/recetas">
 				<div class="grid-over full">
 					<div class="table">
 						<div class="cell-center text-center">
@@ -40,16 +40,18 @@
 				</div>
 			</a>
 		</div>
-		<div class="col-md-3 grid">
-			<div class="table">
-				<div class="cell-center text-center">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/obela_smile.png" style="margin-bottom:20px;">
-					<p class="obelaizer">¡Ya pruébalo!</p>
+		<div class="col-md-3 grid overeable">
+			<a href="#" data-toggle="modal" data-target="#modal-pruebalo">
+				<div class="table">
+					<div class="cell-center text-center">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/obela_smile.png" style="margin-bottom:20px;">
+						<p class="obelaizer">¡Ya pruébalo!</p>
+					</div>
 				</div>
-			</div>
+			</a>
 		</div>
-		<div class="col-md-3 grid">
-			<a href="#">
+		<div class="col-md-3 grid overeable">
+			<a href="#" data-toggle="modal" data-target="#modal-queesobela">
 				<div class="grid-over full">
 					<div class="table">
 						<div class="cell-center text-center">
@@ -61,8 +63,8 @@
 				</div>
 			</a>
 		</div>
-		<div class="col-md-3 grid">
-			<a href="#">
+		<div class="col-md-3 grid overeable">
+			<a href="#" data-toggle="modal" data-target="#modal-hummus">
 				<div class="grid-over full">
 					<div class="table">
 						<div class="cell-bottom text-center">
@@ -101,18 +103,16 @@
 			</a>
 		</div>
 		<div class="col-md-3 grid">
-			<a href="#">
-				<div class="grid-over full">
-					<div class="table">
-						<div class="cell-center text-center">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/obela_home_delicioso.png" alt="">
-							<p class="obelaizer">Delicioso,</p>
-							<p class="obelaizer yellow">nutritivo</p>
-							<p class="obelaizer">versátil</p>
-						</div>
+			<div class="grid-over full">
+				<div class="table">
+					<div class="cell-center text-center">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/obela_home_delicioso.png" alt="">
+						<p class="obelaizer">Delicioso,</p>
+						<p class="obelaizer yellow">nutritivo</p>
+						<p class="obelaizer">versátil</p>
 					</div>
 				</div>
-			</a>
+			</div>
 		</div>
 	</div>
 	<!-- </div> -->
@@ -121,3 +121,4 @@
 var colors = ["#a2052c", "#f1ece7", "#ffa000", "#2d6d00", "#ff6800", "#2d6d00", "#dc022a", "#817c00"];
 var elasticGrid = true;
 </script>
+<?php require("modals.php") ?>

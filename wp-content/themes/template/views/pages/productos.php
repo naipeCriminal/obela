@@ -1,7 +1,7 @@
 <div class="container wmax">
   <div id="elastic-grid" class="row home text-center obela-bold productos">
     <canvas id="canvas"></canvas>
-    <div class="col-md-3 grid">
+    <div class="col-md-3 grid overeable">
       <a href="<?php bloginfo('url'); ?>/?p=115">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/obela_hummus_clasico.png" alt="" class="img-responsive">
         <div class="grid-over full">
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3 grid">
+    <div class="col-md-3 grid overeable">
       <a href="<?php bloginfo('url'); ?>/?p=116">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/obela_hummus_chipotle.png" alt="" class="img-responsive">
         <div class="grid-over full">
@@ -46,7 +46,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3 grid">
+    <div class="col-md-3 grid overeable">
       <a href="<?php bloginfo('url'); ?>/?p=117">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/obela_hummus_pimientos.png" alt="" class="img-responsive">
         <div class="grid-over full">
@@ -66,7 +66,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3 grid">
+    <div class="col-md-3 grid overeable">
       <a href="<?php echo get_permalink(); ?>/?p=118">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/obela_hummus_toreados.png" alt="" class="img-responsive">
         <div class="grid-over full">
