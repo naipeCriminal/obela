@@ -25,6 +25,7 @@ body {
 .cherry, .obelaizer.cherry{ color: #a20425; }
 .white{ color: #ffffff; }
 .green, .obelaizer.green{ color: #c5d12c; }
+.container{ width: 100%; }
 .container.wmax{ padding: 0; }
 .full-bg{
   width: 100%;
@@ -93,11 +94,14 @@ code {
 }
 .navbar-default .navbar-nav > li > a {
   color: #FAFAFA;
-  text-align:center;
-  font-size: 28px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 2px;
 }
 .navbar-fixed-top li > a{
-	font-family: 'obela_handbold';	
+	font-family: Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 21px;
 }
 /*menu centrado*/
 .navbar .navbar-nav {
@@ -144,6 +148,7 @@ footer{
 .grid{
   padding: 0;
 }
+#nosotros .grid-over,
 #home .grid-over,
 .productos > .grid .grid-over{
   background-color: none;
@@ -458,6 +463,7 @@ a:hover {
   background-repeat: no-repeat;
   display: block;
 }
+.icon:hover,
 .icon-network:hover{
   opacity: 0.7;
 }

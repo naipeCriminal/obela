@@ -22,6 +22,7 @@
                 } else html += replaceChars(word);
                 html += " ";
             };
+
             function replaceChars(str) {
                 var newStr = str.replace("¿", "<span class='invert-char'>?</span>").replace("¡", "<span class='invert-char'>!</span>");
                 return newStr;
@@ -48,8 +49,8 @@
     var cuadradosX = 4,
         cuadradosY = 2;
     var PI2 = Math.PI * 2;
-    var range = 10,
-        speed = 40;
+    var range = 15,
+        speed = 30;
     setSquares();
 
     function grid() {
@@ -57,7 +58,7 @@
         canvas = document.getElementById("canvas");
         context = canvas.getContext("2d");
         maxWidth = container.offsetWidth;
-        maxHeight = maxWidth/2;
+        maxHeight = maxWidth / 2;
 
         canvas.width = maxWidth;
         canvas.height = maxHeight;
@@ -133,7 +134,7 @@
                 dy = mouse.y - p.y;
                 distance = Math.sqrt(dx * dx + dy * dy);
                 if (p.movibleX) p.x = ((p.x - (dx / distance) * (range / distance) * speed) - ((p.x - p.x0)) / 3);
-                if (p.movibleY) p.y = ((p.y - (dy / distance) * (range / distance) * speed) - ((p.y - p.y0)) / 3);
+                if (p.movibleY) p.y = ((p.y - (dy / distance) * (range / distance) * speed) - ((p.y - p.y0)) / 6);
             }
         }
         for (var j = 0; j < cuadros.length; j++) {
@@ -169,14 +170,14 @@
     function setSizes() {
         maxWidth = container.offsetWidth;
         // maxHeight = container.offsetHeight;
-        maxHeight = maxWidth/2;
+        maxHeight = maxWidth / 2;
         canvas.width = maxWidth;
         canvas.height = maxHeight;
         setSquares();
         getVertices();
         $('.grid').css("height", maxWidth / 4);
     }
-    if(elasticGrid) grid();
+    if (elasticGrid) grid();
 })();
 
 var App = (function() {

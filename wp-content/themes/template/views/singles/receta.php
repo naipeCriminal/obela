@@ -83,17 +83,17 @@ get_header(); ?>
 						</ul>
 						<h2 class="obela-bold yellow">
 							Compartir receta
-							<a href="#">
+							<a href="https://www.facebook.com/ObelaMX" target="_blank">
 								<div class="icon-network">
 									<span class="icon fb-icon"></span>
 								</div>
 							</a>
-							<a href="#">
+							<a href="https://twitter.com/Obela_Mx" target="_blank">
 								<div class="icon-network">
 									<span class="icon tw-icon"></span>
 								</div>
 							</a>
-							<a href="#">
+							<a href="https://instagram.com/obela_mx/" target="_blank">
 								<div class="icon-network">
 									<span class="icon ig-icon"></span>
 								</div>
@@ -139,7 +139,7 @@ get_header(); ?>
 								<div class="underline-recipe"></div>
 							</p>
 							<div class="obela-smile">
-								<img src="<?php echo get_template_directory_uri(); ?>e/assets/img/receta-smile.png">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/receta-smile.png">
 							</div>
 						</div>
 					</div>

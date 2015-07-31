@@ -29,10 +29,10 @@
 		</div>
 		<div class="col-md-3 grid">
 			<a href="#">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/obela_home_cocina.png" alt="" class="img-responsive">
 				<div class="grid-over full">
 					<div class="table">
-						<div class="cell-bottom text-center">
+						<div class="cell-center text-center">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/home/obela_home_cocina.png" alt="">
 							<p class="obelaizer cherry">Cocina</p>
 							<p class="obelaizer cherry">Obela®</p>
 						</div>
@@ -80,17 +80,17 @@
 					<div class="cell-center text-center">
 						<p class="obelaizer">¡Síguenos!</p>
 						<div class="container-networks">
-							<a href="#">
+							<a href="https://www.facebook.com/ObelaMX" target="_blank">
 								<div class="icon-network">
 									<span class="icon fb-icon"></span>
 								</div>
 							</a>
-							<a href="#">
+							<a href="https://twitter.com/Obela_Mx" target="_blank">
 								<div class="icon-network">
 									<span class="icon tw-icon"></span>
 								</div>
 							</a>
-							<a href="#">
+							<a href="https://instagram.com/obela_mx/" target="_blank">
 								<div class="icon-network">
 									<span class="icon ig-icon"></span>
 								</div>
