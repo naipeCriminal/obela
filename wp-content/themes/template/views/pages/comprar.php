@@ -2,12 +2,12 @@
     	<div class="row ubicacion">
 			<div class="col-xs-12 col-md-12 header-ubicacion">
 				<div class="header-img hidden-xs">
-					<img src="<?php bloginfo('url'); ?>/wp-content/themes/template/assets/img/header-img.png" alt="">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/header-img.png" alt="">
 				</div>
 				<div class="col-xs-6 col-md-6"><h1>encuentra de obela</h1></div>
 				<div class="col-xs-6 col-md-6">
-					<img style="display:inline;" class="img-responsive" src="<?php bloginfo('url'); ?>/wp-content/themes/template/assets/img/ubicacion-ubicacion.png" alt="">
-					<img style="display:inline;" class="img-responsive" src="<?php bloginfo('url'); ?>/wp-content/themes/template/assets/img/ubicacion-bullets.png" alt="">
+					<img style="display:inline;" class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/ubicacion-ubicacion.png" alt="">
+					<img style="display:inline;" class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/ubicacion-bullets.png" alt="">
 				</div>
 			</div>
 		</div>
@@ -18,7 +18,7 @@
 						<p style="color:#fff;  font-size: 16px;">encuentra un punto de venta cerca de ti.</p>
 					</div>
 					<div class="col-xs-2 col-sm-2 col-md-2">
-						<img class="img-responsive" src="<?php bloginfo('url'); ?>/wp-content/themes/template/assets/img/apuntadormapa.png" alt="">
+						<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/apuntadormapa.png" alt="">
 					</div>
 				</div>
 

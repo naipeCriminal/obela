@@ -9,15 +9,23 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
   color: #fff;
+  overflow-y: scroll;
+  padding-top: 50px;
+}
+#elastic-grid{ position: relative; }
+#canvas{
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .relative{ position: relative; }
 .absolute{ position: absolute; }
 .mobile{ display: none; }
-.yellow{ color: #dfe130; }
+.obelaizer.yellow, .yellow{ color: #dfe130; }
+.cherry, .obelaizer.cherry{ color: #a20425; }
 .white{ color: #ffffff; }
-.container.wmax{
-  padding-top: 50px;
-}
+.green, .obelaizer.green{ color: #c5d12c; }
+.container.wmax{ padding: 0; }
 .full-bg{
   width: 100%;
   height: 100%;
@@ -57,6 +65,12 @@ body {
   width: 100%;
   vertical-align: middle;
 }
+.cell-bottom{
+  display: table-cell;
+  width: 100%;
+  vertical-align: bottom;
+  padding-bottom: 15px;
+}
 
 /* Custom page CSS
 -------------------------------------------------- */
@@ -95,7 +109,8 @@ code {
   text-align: center;
 }
 .wmax{
-  max-width: 1200px;
+  /*max-width: 1200px;*/
+  width: 100%;
 }
 ..carousel-indicators{
     border: 0px solid #fff;
@@ -126,7 +141,16 @@ footer{
 #receta-preparacion{
   padding-left: 15px;
 }
-.receta-grid p {
+.grid{
+  padding: 0;
+}
+#home .grid-over,
+.productos > .grid .grid-over{
+  background-color: none;
+  background-color: transparent;
+  display: block;
+}
+.grid p {
   font-family: "obela_handbold";
   color: #ffffff;
   font-size: 47px;
@@ -139,11 +163,14 @@ footer{
   width: 90%;
   margin: 0 auto;
 }
+#receta-ingredientes{
+  list-style: none;
+}
 #receta-ingredientes li{
   list-style: none;
 }
-#receta-preparacion li{
-  list-style-type: disc;
+#producto-ingredientes{
+  margin-bottom: 60px;
 }
 .underline-recipe{
   width: 80%;
@@ -153,10 +180,10 @@ footer{
   border-radius: 5px;
   -webkit-border-radius: 5px;
 }
-.receta-grid:hover .receta-grid-over{
+.grid:hover .grid-over{
   display: block;
 }
-.receta-grid-over{
+.grid-over{
   background-color: #dc022a;
   display: none;
 }
@@ -215,6 +242,12 @@ footer{
 #receta-divisor{
   background-color: #ffa000;
   background-image: url(../img/receta-divisor.png);
+}
+#producto-divisor{
+  background-color: #b41937;
+  background-image: url(../img/producto-divisor.png);
+  background-image: url(../img/producto-divisor-left.png), url(../img/producto-divisor-right.png);
+  background-position: left, right;
 }
 #recetas-divisor-bottom{
   background-color: #dc022a;
@@ -394,6 +427,10 @@ a:hover {
 }
 
 /*icons*/
+#home .container-networks{ margin-top: 20px; }
+#home .container-networks .icon-network{
+  background-color: transparent;
+}
 .icon-network{
   width: 30px;
   height: 30px;
@@ -421,7 +458,9 @@ a:hover {
   background-repeat: no-repeat;
   display: block;
 }
-
+.icon-network:hover{
+  opacity: 0.7;
+}
 .fb-icon {
   width: 9px;
   height: 18px;
@@ -429,7 +468,11 @@ a:hover {
   margin-left: 5px;
   margin-top: 1px;
 }
-
+.icon-network{
+  background-position: -2px -2px;
+  margin-left: 5px;
+  margin-top: 1px; 
+}
 .ig-icon {
   width: 15px;
   height: 16px;

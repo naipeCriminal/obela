@@ -10,8 +10,8 @@ get_header(); ?>
 			$imgDestacada = wp_get_attachment_url( $thumbID );
 		?>
 		<div class="col-md-6 padding-reset full-height absolute">
-			<div class="full-bg" style="background-image: url(<?php bloginfo('url'); ?>/wp-content/themes/template/assets/img/maqueta/foto-receta.jpg);">
-				<img src="<?php bloginfo('url'); ?>/wp-content/themes/template/assets/img/maqueta/foto-receta.jpg" alt="" class="img-responsive mobile">
+			<div class="full-bg" style="background-image: url(<?= $imgDestacada ?>);">
+				<img src="<?= $imgDestacada ?>" alt="" class="img-responsive mobile">
 			</div>
 		</div>
 		<div class="col-md-6 col-md-offset-6">
@@ -128,10 +128,10 @@ get_header(); ?>
 		$thumbID = get_post_thumbnail_id( $post->ID );
 		$imgDestacada = wp_get_attachment_url( $thumbID );
 		?>
-		<div class="col-xs-6 col-md-3 col-lg-3 padding-reset receta-grid">
+		<div class="col-xs-6 col-md-3 col-lg-3 padding-reset grid">
 			<a href="<?php echo get_permalink(); ?>">
 				<img src="<?php echo $imgDestacada; ?>" alt="" class="img-responsive">
-				<div class="receta-grid-over full">
+				<div class="grid-over full">
 					<div class="table">
 						<div class="cell-center text-center">
 							<p>
@@ -139,7 +139,7 @@ get_header(); ?>
 								<div class="underline-recipe"></div>
 							</p>
 							<div class="obela-smile">
-								<img src="<?php bloginfo('url'); ?>/wp-content/themes/template/assets/img/receta-smile.png">
+								<img src="<?php echo get_template_directory_uri(); ?>e/assets/img/receta-smile.png">
 							</div>
 						</div>
 					</div>

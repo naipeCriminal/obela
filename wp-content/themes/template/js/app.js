@@ -1,7 +1,7 @@
 (function($) {
 
     $.fn.obelaizer = function() {
-        var specialChars = ["¿", "¿", "¡", "!", "®"];
+        var specialChars = "¿_?_¡_!_®_._,".split("_");
         this.each(function() {
             var text = $(this).text(),
                 words = text.split(" "),
@@ -10,10 +10,11 @@
                 var word = words[i];
                 if (word.length > 2) {
                     var validCharCounter = 1;
+                    // for (var j = 0; j < word.length; j++) {
                     for (var j = 0; j < word.length; j++) {
                         var letter = word[j];
                         if (specialChars.indexOf(letter) < 0) {
-                            if (validCharCounter % 3 == 0) html += "<span class='obelaizer-letter'>" + letter + "</span>";
+                            if (validCharCounter == 3) html += "<span class='obelaizer-letter'>" + letter + "</span>";
                             else html += replaceChars(letter);
                             validCharCounter++;
                         } else html += replaceChars(letter);
@@ -21,7 +22,6 @@
                 } else html += replaceChars(word);
                 html += " ";
             };
-
             function replaceChars(str) {
                 var newStr = str.replace("¿", "<span class='invert-char'>?</span>").replace("¡", "<span class='invert-char'>!</span>");
                 return newStr;
@@ -33,8 +33,7 @@
     };
 }(jQuery));
 
-$(document).on("ready", function() {
-
+(function() {
     var container, canvas, context;
     var maxWidth, maxHeight;
 
@@ -42,7 +41,6 @@ $(document).on("ready", function() {
         x: 10,
         y: 10
     };
-    var colors = ["#6C6B17", "#A10B30", "#D1372B", "#DD9604"];
 
     var cuadros = [],
         vertices = [];
@@ -50,30 +48,31 @@ $(document).on("ready", function() {
     var cuadradosX = 4,
         cuadradosY = 2;
     var PI2 = Math.PI * 2;
-    var range = 20,
-        speed = 100;
-    cuadrosCalcular()
+    var range = 10,
+        speed = 40;
+    setSquares();
 
     function grid() {
-        container = document.getElementById("cien");
+        container = document.getElementById("elastic-grid");
         canvas = document.getElementById("canvas");
         context = canvas.getContext("2d");
         maxWidth = container.offsetWidth;
-        maxHeight = container.offsetHeight;
+        maxHeight = maxWidth/2;
 
         canvas.width = maxWidth;
         canvas.height = maxHeight;
+        setSizes();
         getVertices();
 
-
         window.addEventListener("mousemove", windowOnMouseMove, false);
-        window.addEventListener("resize", onWindowResize, false);
+        window.addEventListener("resize", setSizes, false);
+        animate();
     }
 
     function getVertices() {
         vertices = [];
         var ancho = maxWidth / cuadradosX;
-        var alto = maxHeight / cuadradosY
+        var alto = maxHeight / cuadradosY;
         for (var i = 0; i <= cuadradosY; i++) {
             y = i * alto;
 
@@ -112,7 +111,6 @@ $(document).on("ready", function() {
                 var verticesCuadrado = [j + verticeY, verticeY + j + 1, (verticeY + j + 1) + cuadradosX, (verticeY + j + 2) + cuadradosX, colors[Math.floor(Math.random() * colors.length)]];
                 cuadros.push(verticesCuadrado);
             };
-
             fila++;
         };
 
@@ -124,7 +122,6 @@ $(document).on("ready", function() {
     }
 
     function render() {
-        var time = new Date().getTime() * 0.000006;
         context.beginPath();
         context.clearRect(0, 0, maxWidth, maxHeight);
         context.closePath();
@@ -135,8 +132,8 @@ $(document).on("ready", function() {
                 dx = mouse.x - p.x;
                 dy = mouse.y - p.y;
                 distance = Math.sqrt(dx * dx + dy * dy);
-                if (p.movibleX) p.x = ((p.x - (dx / distance) * (range / distance) * speed) - ((p.x - p.x0)) / 3) + (Math.sin(time * i));
-                if (p.movibleY) p.y = ((p.y - (dy / distance) * (range / distance) * speed) - ((p.y - p.y0)) / 3) + (Math.cos(time * i));
+                if (p.movibleX) p.x = ((p.x - (dx / distance) * (range / distance) * speed) - ((p.x - p.x0)) / 3);
+                if (p.movibleY) p.y = ((p.y - (dy / distance) * (range / distance) * speed) - ((p.y - p.y0)) / 3);
             }
         }
         for (var j = 0; j < cuadros.length; j++) {
@@ -147,7 +144,7 @@ $(document).on("ready", function() {
             context.lineTo(vertices[cuadro[3]].x, vertices[cuadro[3]].y);
             context.lineTo(vertices[cuadro[2]].x, vertices[cuadro[2]].y);
             context.lineTo(vertices[cuadro[0]].x, vertices[cuadro[0]].y);
-            context.fillStyle = cuadro[4];
+            context.fillStyle = colors[j] ? colors[j] : colors[4];
             context.fill();
             context.closePath();
         };
@@ -158,28 +155,29 @@ $(document).on("ready", function() {
         mouse.y = event.pageY - container.offsetTop;
     }
 
-    function cuadrosCalcular() {
+    function setSquares() {
         anchoV = window.innerWidth
         if (anchoV <= 990) {
-            cuadradosX = 2;
-            cuadradosY = 4;
+            cuadradosX = 1;
+            cuadradosY = 8;
         } else {
             cuadradosX = 4;
             cuadradosY = 2;
         }
     }
 
-    function onWindowResize() {
+    function setSizes() {
         maxWidth = container.offsetWidth;
-        maxHeight = container.offsetHeight;
+        // maxHeight = container.offsetHeight;
+        maxHeight = maxWidth/2;
         canvas.width = maxWidth;
         canvas.height = maxHeight;
+        setSquares();
         getVertices();
-        cuadrosCalcular()
+        $('.grid').css("height", maxWidth / 4);
     }
-    grid();
-    animate();
-})
+    if(elasticGrid) grid();
+})();
 
 var App = (function() {
 

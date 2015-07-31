@@ -1,5 +1,5 @@
 <div class="container wmax">
-	<div class="row recetas">
+	<div class="row recetas text-center">
 		<?php
 		$args = array('post_type' => 'receta','posts_per_page' => '8','orderby' => 'rand',);
 		$category_posts = new WP_Query($args);
@@ -10,10 +10,10 @@
 		$thumbID = get_post_thumbnail_id( $post->ID );
 		$imgDestacada = wp_get_attachment_url( $thumbID );
 		?>
-		<div class="col-xs-6 col-md-3 col-lg-3 padding-reset receta-grid">
+		<div class="col-xs-6 col-md-3 col-lg-3 padding-reset grid">
 			<a href="<?php echo get_permalink(); ?>">
 				<img src="<?php echo $imgDestacada; ?>" alt="" class="img-responsive">
-				<div class="receta-grid-over full">
+				<div class="grid-over full">
 					<div class="table">
 						<div class="cell-center text-center">
 							<p>
@@ -21,7 +21,7 @@
 								<div class="underline-recipe"></div>
 							</p>
 							<div class="obela-smile">
-								<img src="<?php bloginfo('url'); ?>/wp-content/themes/template/assets/img/receta-smile.png">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/receta-smile.png">
 							</div>
 						</div>
 					</div>
@@ -56,10 +56,10 @@
 		$thumbID = get_post_thumbnail_id( $post->ID );
 		$imgDestacada = wp_get_attachment_url( $thumbID );
 		?>
-		<div class="col-xs-6 col-md-3 col-lg-3 padding-reset receta-grid">
+		<div class="col-xs-6 col-md-3 col-lg-3 padding-reset grid">
 			<a href="<?php echo get_permalink(); ?>">
 				<img src="<?php echo $imgDestacada; ?>" alt="" class="img-responsive">
-				<div class="receta-grid-over full">
+				<div class="grid-over full">
 					<div class="table">
 						<div class="cell-center text-center">
 							<p>
@@ -67,7 +67,7 @@
 								<div class="underline-recipe"></div>
 							</p>
 							<div class="obela-smile">
-								<img src="<?php bloginfo('url'); ?>/wp-content/themes/template/assets/img/receta-smile.png">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/receta-smile.png">
 							</div>
 						</div>
 					</div>

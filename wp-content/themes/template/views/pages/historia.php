@@ -1,7 +1,7 @@
     <div class="container wmax">
     	<div class="row historia ">
 			<div class="col-md-12 sinEspacio">
-				<img src="<?php bloginfo('url'); ?>/wp-content/themes/template/assets/img/nuestra-historia.jpg" class="img-responsive" alt="">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/nuestra-historia.jpg" class="img-responsive" alt="">
 			</div>
 			<div class="col-md-12 sinEspacio">
 				<p>obela ©  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa error vel tempore, quam sequi, ad facilis cumque similique excepturi optio est, natus aut porro incidunt. Maiores sapiente distinctio, iusto soluta!</p>

@@ -11,11 +11,11 @@
 
 	<?php get_footer(); ?>
 	
-	<script src="<?php bloginfo('url'); ?>../wp-content/themes/template/js/jquery-1.11.3.min.js"></script>
-	<script src="<?php bloginfo('url'); ?>../wp-content/themes/template/js/jquery-migrate-1.2.1.js"></script>
-	<script src="<?php bloginfo('url'); ?>../wp-content/themes/template/js/bootstrap.js"></script>
-	<script src="<?php bloginfo('url'); ?>../wp-content/themes/template/js/jquery.easing.1.3.js"></script>
-	<script src="<?php bloginfo('url'); ?>../wp-content/themes/template/js/app.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.11.3.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-migrate-1.2.1.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easing.1.3.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/app.js"></script>
 	<script>
 		App.init();
 	</script>
