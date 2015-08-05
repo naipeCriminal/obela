@@ -60,6 +60,6 @@ get_header(); ?>
 <?php
 	endwhile;
 ?>
-<?php require("/../pages/productos.php"); ?>
+<?php require( get_template_directory() ."/views/pages/productos.php"); ?>
 <?php
 get_footer();

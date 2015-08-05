@@ -43,11 +43,9 @@
         y: 10
     };
 
-    var cuadros = [],
+    var squaresX, squaresY, squares = [],
         vertices = [];
 
-    var cuadradosX = 4,
-        cuadradosY = 2;
     var PI2 = Math.PI * 2;
     var range = 15,
         speed = 30;
@@ -58,7 +56,7 @@
         canvas = document.getElementById("canvas");
         context = canvas.getContext("2d");
         maxWidth = container.offsetWidth;
-        maxHeight = maxWidth / 2;
+        maxHeight = maxWidth / 4;
 
         canvas.width = maxWidth;
         canvas.height = maxHeight;
@@ -72,12 +70,11 @@
 
     function getVertices() {
         vertices = [];
-        var ancho = maxWidth / cuadradosX;
-        var alto = maxHeight / cuadradosY;
-        for (var i = 0; i <= cuadradosY; i++) {
+        var ancho = maxWidth / squaresX;
+        var alto = maxHeight / squaresY;
+        for (var i = 0; i <= squaresY; i++) {
             y = i * alto;
-
-            for (var j = 0; j <= cuadradosX; j++) {
+            for (var j = 0; j <= squaresX; j++) {
                 var movible = true,
                     movibleX = true,
                     movibleY = true;
@@ -99,18 +96,19 @@
                 });
             };
         };
+        console.log(vertices)
         calcularCuadros();
     }
 
     function calcularCuadros() {
-        cuadros = [];
+        squares = [];
         var fila = 0;
         var verticeY = 0;
-        for (var i = 0; i < cuadradosY; i++) {
-            verticeY = (fila * (cuadradosX + 1));
-            for (var j = 0; j < cuadradosX; j++) {
-                var verticesCuadrado = [j + verticeY, verticeY + j + 1, (verticeY + j + 1) + cuadradosX, (verticeY + j + 2) + cuadradosX, colors[Math.floor(Math.random() * colors.length)]];
-                cuadros.push(verticesCuadrado);
+        for (var i = 0; i < options.squaresY; i++) {
+            verticeY = (fila * (squaresX + 1));
+            for (var j = 0; j < squaresX; j++) {
+                var verticesCuadrado = [j + verticeY, verticeY + j + 1, (verticeY + j + 1) + squaresX, (verticeY + j + 2) + squaresX, options.colors[Math.floor(Math.random() * options.colors.length)]];
+                squares.push(verticesCuadrado);
             };
             fila++;
         };
@@ -137,15 +135,15 @@
                 if (p.movibleY) p.y = ((p.y - (dy / distance) * (range / distance) * speed) - ((p.y - p.y0)) / 4);
             }
         }
-        for (var j = 0; j < cuadros.length; j++) {
-            var cuadro = cuadros[j];
+        for (var j = 0; j < squares.length; j++) {
+            var cuadro = squares[j];
             context.beginPath();
             context.moveTo(vertices[cuadro[0]].x, vertices[cuadro[0]].y);
             context.lineTo(vertices[cuadro[1]].x, vertices[cuadro[1]].y);
             context.lineTo(vertices[cuadro[3]].x, vertices[cuadro[3]].y);
             context.lineTo(vertices[cuadro[2]].x, vertices[cuadro[2]].y);
             context.lineTo(vertices[cuadro[0]].x, vertices[cuadro[0]].y);
-            context.fillStyle = colors[j] ? colors[j] : colors[4];
+            context.fillStyle = options.colors[j] ? options.colors[j] : options.colors[4];
             context.fill();
             context.closePath();
         };
@@ -157,45 +155,40 @@
     }
 
     function setSquares() {
-        anchoV = window.innerWidth
-        if (anchoV <= 990) {
-            cuadradosX = 1;
-            cuadradosY = 8;
+        var windoWidth = window.innerWidth;
+        if (windoWidth <= 990) {
+            $('.grid').css("height", maxWidth);
+            squaresX = options.squares.mobile.squaresX;
+            squaresY = options.squares.mobile.squaresX * options.squares.mobile.squaresY;
         } else {
-            cuadradosX = 4;
-            cuadradosY = 2;
+            $('.grid').css("height", maxWidth / 4);
+            squaresX = options.squares.full.squaresX;
+            squaresY = options.squares.full.squaresY;
         }
     }
 
     function setSizes() {
         maxWidth = container.offsetWidth;
-        // maxHeight = container.offsetHeight;
-        maxHeight = maxWidth / 2;
+        maxHeight = maxWidth / 4;
         canvas.width = maxWidth;
         canvas.height = maxHeight;
         setSquares();
         getVertices();
-        $('.grid').css("height", maxWidth / 4);
     }
     if (elasticGrid) grid();
 })();
 
-var App = (function() {
-
-    function ubicacion() {
-        wmx = $('.maxwidht').width();
-        $('#map-canvas').width(wmx);
-
-        var ubicacion = $('.row.ubicacion').height();
-        $('.header-ubicacion .header-img img').height(ubicacion);
-    }
-
-    function eventosPrincipal() {
+var App = {
+    init: function() {
         $(".obelaizer").obelaizer();
         $(".grid.overeable").hover(function() {
-            $(this).transition({ scale: 0.95 });
+            $(this).transition({
+                scale: 0.95
+            });
         }, function() {
-            $(this).transition({ scale: 1 });
+            $(this).transition({
+                scale: 1
+            });
         });
         $(".grid").each(function(index, el) {
             $(this).delay(Math.random() * 900).animate({
@@ -208,16 +201,4 @@ var App = (function() {
             top: 0
         }, 900, 'easeOutQuart');
     }
-
-    $(window).resize(function() {
-        console.log("ok")
-        ubicacion();
-    });
-
-    return {
-        init: function() {
-            eventosPrincipal();
-            ubicacion();
-        }
-    }
-})();
+};

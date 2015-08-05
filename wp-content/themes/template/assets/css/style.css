@@ -197,6 +197,7 @@ footer{
 .grid{
   padding: 0;
 }
+#comprar .grid-over,
 #nosotros .grid-over,
 #home .grid-over,
 .productos > .grid .grid-over{
